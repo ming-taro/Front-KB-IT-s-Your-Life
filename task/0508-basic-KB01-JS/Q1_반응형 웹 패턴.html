@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹 패턴</title>
+
+    <style>
+        @media screen and (min-width: 960px){
+            .title {
+                background-color: #00FF00;
+            }
+        }
+        @media screen and (max-width: 959px){
+            .title {
+                background-color: #000000;
+            }
+        }
+        @media screen and (max-width: 767px){
+            .title {
+                background-color: #FFFF00;
+            }
+        }
+
+        body {
+            background-color: #D4E7F5;
+        }
+
+        .title-container {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+            max-width: 700px;
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .title {
+            color: #F00EF0;
+            font-weight: bold;
+            font-size: 20pt;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+            max-width: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-container">
+        <div class="title">
+            난 옐로우핑크
+        </div>
+    </div>
+    
+    <img src="/resources/image/flower2.PNG" alt="꽃">
+</body>
+
+</html>
