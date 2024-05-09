@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        hr.line {
+            border: 5px solid #FB0000;
+        }
+        .item {
+            background-color: #ACFF29;
+        }
+        thead {
+            text-align: center;
+        }
+        td {
+            width: 100px;
+        }
+        tbody td:hover {
+            font-family: "궁서체";
+            font-size: 25px;
+            color: white;
+            background-color: #FD0000;
+        }
+        .kind {
+            background-color: #FFFF00;
+        }
+        .price {
+            background-color: #FFC6CD;;
+        }
+        .place {
+            background-color: #008301;
+        }
+        .back-button {
+            text-decoration-line: underline;
+            text-align: center;
+            background-color: #DFA5DF;
+        }
+        .back-button > a {
+            color: #602379;
+        }
+    </style>
+</head>
+<body> 
+    <h2>나의 취미</h2>
+    <hr class="line">
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td class="kind">취미종류</td>
+                <td class="price">취미금액</td>
+                <td class="place">취미장소</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="item">달리기</td>
+                <td class="item">1000</td>
+                <td class="item">여의도 공원</td>
+            </tr>
+            <tr>
+                <td class="item">등산</td>
+                <td class="item">2000</td>
+                <td class="item">관악산</td>
+            </tr>
+            <tr>
+                <td class="item">독서</td>
+                <td class="item">10000</td>
+                <td class="item">강남역</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="back-button">
+                    <a href="/0507-basic-KB01-CSS-박민지_240508/login.html">첫페이지로</a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

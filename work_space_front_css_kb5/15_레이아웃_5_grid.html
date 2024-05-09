@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>레이아웃 - grid</h1>
+    <hr><br>
+    <h3>0. display - grid 속성</h3>
+    <div> - 참고 자료 : https://studiomeal.com/archives/533</div>
+    <div> - css3(2014년)에서 추가된 속성으로 2차원 영역에서 가로 세로로 레이아웃을 정하는 스타일</div>
+    <div> - container(외부 레이아웃)에 맞춰 알아서 크기를 변경하도록 설계가 가능하다. </div>
+    <br>
+    <h3>grid 주요 속성</h3>
+    <ul>
+        <li>grid-template-columns : 그리드 레이아웃의 열의 갯수를 정의하고 열의 너비를 정하는 속성 </li>
+        <li>grid-template-rows : 그리드 레이아웃의 세로의 갯수를 정의하고 세로의 너비를 정하는 속성 </li>
+    </ul>
+    <hr><br>
+    <h3>1. 기본적인 배치 방법</h3>
+    <li> - grid-template-columns 사용시 열의 갯수를 표현하고, grid-template-rows로 높이를 정하는 방법 </li>
+
+    <style>
+        #wrapper1 {
+            display: grid;
+            /* 3개 열, 200px 200px 200px로 배치하는 명령 */
+            grid-template-columns: 200px 200px 200px;
+            /* 행의 높이는 100px, 생략시 auto */
+            grid-template-rows: 100px;
+        }
+
+        #wrapper2 {
+            display: grid;
+            /* 4개의 열을 적당한 크기로 배치하라 = just하게 맞아 떨어진다 */
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: auto;
+        }
+
+        .items {
+            padding: 10px;
+            background-color: #eee;
+        }
+
+        .items:nth-child(odd) {
+            background-color: #bbb;
+        }
+    </style>
+
+    <div id="wrapper1">
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, reprehenderit.Lorem
+            ipsumdolor, sit amet consectetur adipisicing elit. </div>
+        <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Lorem ipsum dolor, sit
+            ametconsectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit amet.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem, ipsum dolor.</div>
+    </div>
+    <br>
+
+    <div id="wrapper2">
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, reprehenderit.Lorem
+            ipsumdolor, sit amet consectetur adipisicing elit. </div>
+        <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit amet.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem, ipsum dolor.</div>
+    </div>
+    <hr><br>
+
+    <h3>2. 함수 사용하기</h3>
+    <li> - repeat : 반복된 값을 넣는 함수, repeat(반복횟수, 반복할 인자) </li>
+    <div>- fr : 유연한 크기를 갖는 단위, 남는 자유 공간을 fr로 정해진 단위로 쪼개서 배치</div>
+    <div>- ex) 100px 2fr 1fr : 100px를 할당하고 남는 공간중 2/3을 2fr로, 1/3을 1fr로 쪼개서 배치</div>
+    <br>
+
+    <style>
+        .wrapper3 {
+            
+        }
+
+        .items {
+            padding: 10px;
+            background-color: #eee;
+        }
+
+        .items:nth-child(odd) {
+            background-color: #bbb;
+        }
+    </style>
+
+    <div id="wrapper3">
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, reprehenderit.Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. </div>
+        <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit amet.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem, ipsum dolor.</div>
+    </div>
+    <hr><br>
+</body>
+
+</html>
