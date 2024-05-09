@@ -79,8 +79,15 @@
     <br>
 
     <style>
-        .wrapper3 {
-            
+        #wrapper3 {
+            width: 600px;
+            display: grid;
+            /* 그리드 컨테이너 지정 */
+            grid-template-columns: repeat(3, 1fr);
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            /* 너비가 같은 컬럼 3개 */
+            grid-template-rows: minmax(100px, auto);
+            /* 줄 높이는 최소 100px, max는 auto */
         }
 
         .items {
@@ -103,6 +110,189 @@
         <div class="items">Lorem, ipsum dolor.</div>
     </div>
     <hr><br>
+
+    <h3>3. auto-fit,auto-fill</h3>
+
+    <style>
+        #wrapper4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            /* 화면을 꽉 채울만큼 칼럼 너비를 늘려서 표시 */
+            margin-bottom: 20px;
+        }
+
+        #wrapper5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            /* 칼럼 최소 너비만큼 채워서 표시 */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .items {
+            padding: 15px;
+            background-color: #eee;
+        }
+
+        .items:nth-child(odd) {
+            background-color: #bbb;
+        }
+    </style>
+
+    <h1>auto-fit일 때</h1>
+    <div id="wrapper4">
+        <div class="items">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nesciunt magnivoluptatem.
+        </div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nulla corrupti porro!</div>
+        <div class="items">Lorem ipsum dolor sit.</div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quos!</div>
+        <div class="items">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro odit quam sit.</div>
+    </div>
+    <h1>auto-fill일 때</h1>
+    <div id="wrapper5">
+        <div class="items">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nesciunt magnivoluptatem.
+        </div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nulla corrupti porro!</div>
+        <div class="items">Lorem ipsum dolor sit.</div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quos!</div>
+        <div class="items">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro odit quam sit.</div>
+    </div>
+    <hr><br>
+
+    <h3>4. gap : 간격 사용</h3>
+
+    <style>
+        #wrapper6 {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            /* 너비 200px인 칼럼 3개 */
+            grid-template-rows: minmax(100px, auto);
+            grid-gap: 20px 30px;
+            /* 칼럼 간격 30px, 줄 간격 20px  */
+            /* grid-column-gap:30px; */
+            /* grid-row-gap:20px; */
+        }
+
+        .items {
+            padding: 15px;
+            background-color: #eee;
+        }
+
+        .items:nth-child(odd) {
+            background-color: #bbb;
+        }
+    </style>
+
+    <div id="wrapper6">
+        <div class="items">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nesciunt magnivoluptatem.
+        </div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nulla corrupti porro!</div>
+        <div class="items">Lorem ipsum dolor sit.</div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quos!</div>
+        <div class="items">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro odit quam sit.</div>
+    </div>
+    <hr><br>
+
+    <h3>5. grid-column, grid-row</h3>
+    <style>
+        #wrapper7 {
+            width: 700px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+        }
+
+        .item {
+            padding: 15px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .item1 {
+            background-color: #3689FF;
+            grid-column: 1/4;
+        }
+
+        .item2 {
+            background-color: #00CF12;
+            grid-row: 2/4;
+            /* grid-column:1/2; */
+            grid-column-start: 1;
+        }
+
+        .item3 {
+            background-color: #FF9019;
+            grid-column: 2/4;
+            /* grid-row:2/3; */
+            grid-row-start: 2;
+        }
+
+        .item4 {
+            background-color: #FFD000;
+            grid-column-start: 3;
+            grid-row-start: 3;
+        }
+    </style>
+    <div id="wrapper7">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="item item4">item4</div>
+    </div>
+    <hr><br>
+
+    <h3>5. grid-template-areas</h3>
+    <style>
+        #wrapper8 {
+            width: 700px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            grid-template-areas:
+                "box1 box1 box1"
+                "box2 box3 box3"
+                "box2 .    box4";
+        }
+
+        .box {
+            padding: 15px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .box1 {
+            background-color: #3689FF;
+            grid-area: box1;
+        }
+
+        .box2 {
+            background-color: #00CF12;
+            grid-area: box2;
+        }
+
+        .box3 {
+            background-color: #FF9019;
+            grid-area: box3;
+        }
+
+        .box4 {
+            background-color: #FFD000;
+            grid-area: box4;
+        }
+    </style>
+    <div id="wrapper8">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+    </div>
 </body>
 
 </html>
