@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .submit-button {
+            background-color: #A4C795;
+            border: 1px solid #244E7D;
+            border-radius: 10px;
+            padding: 10px 30px;
+            margin-left: 10px;
+        }
+
+        .item {
+            font-size: 15pt;
+        }
+
+        #success {
+            color: red;
+            padding: 10px 0px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div>
+            <span>
+                <span class="item">아이디</span>
+                <input class="item" type="text" value="">
+            </span>
+            <div id="success">아이디 성공</div>
+        </div>
+        <span>
+            <button class="submit-button" onclick="checkID()">아이디체크</button>
+        </span>
+    </div>
+    <hr><br>
+
+    <span>
+        <span>
+            <span>
+                <span class="item">지식인 검색어</span>
+                <input id="naver-search" class="item" type="text" value="">
+            </span>
+        </span>
+        <span>
+            <button class="submit-button" onclick="searchNaver()">지식인 검색</button>
+        </span>
+    </span>
+    <hr><br>
+
+    <span>
+        <span>
+            <span>
+                <span class="item">보고싶은 웹툰 입력</span>
+                <input class="item" type="text" value="">
+            </span>
+        </span>
+        <span>
+            <button class="submit-button" onclick="">웹툰 검색</button>
+        </span>
+    </span>
+    <hr><br>
+
+    <script>
+        function checkID() {
+            console.log("버튼 클릭");
+            let btnID = document.getElementById('success');
+            console.log(btnID);
+            
+            btnID.style.visibility = 'visible';
+        }
+
+        function searchNaver() {
+            console.log(document.getElementById('naver-search').value);
+            let keyword = document.getElementById('naver-search').value;
+            let URL = "https://kin.naver.com/search/list.naver?query=" + keyword;
+            window.open(URL, '네이버지식인'); 
+        }
+    </script>
+</body>
+
+</html>
