@@ -116,18 +116,18 @@
     <input type="text" name="valueGroup" value="5"><br>
     <button onclick="test5()">버튼</button>
     <script>
-        function test5(){
+        function test5() {
             // 기초 문법
             let array1 = [1, 2, 3, 4, 5];
 
-            for(let v of array1){
+            for (let v of array1) {
                 console.log(v);
             }
 
             // 응용
             let array = document.getElementsByName('valueGroup');
             let sum = 0;
-            for(let element of array){
+            for (let element of array) {
                 sum += Number(element.value);
             }
             alert('sum : ' + sum);
@@ -140,7 +140,7 @@
     <div id="div3"></div>
     <script>
         function test6() {
-            let member = { name: '홍길동', age: 25, hobby: ['축구', '야구', '농구',]};
+            let member = { name: '홍길동', age: 25, hobby: ['축구', '야구', '농구',] };
             let text = '';
 
             // name과 value 출력하는 코드
