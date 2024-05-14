@@ -58,11 +58,11 @@
             let success = document.getElementById('success');
 
             if (isWrongPassword()) {
-                console.log("불일치");
                 success.style.display = 'none';
                 fail.style.display = 'block';
                 return;
             }
+            
             fail.style.display = 'none';
             success.style.display = 'block';
         }
