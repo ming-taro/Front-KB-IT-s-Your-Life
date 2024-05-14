@@ -11,7 +11,7 @@
     <span>
         <span>
             <span class="item">아이디 입력: </span>
-            <input id="naver-search" class="item" type="text" value="">
+            <input id="member-id" class="item" type="text" value="">
         </span>
     </span>
     <hr>
@@ -19,22 +19,72 @@
     <span>
         <span>
             <span class="item">패스워드: </span>
-            <input id="naver-search" class="item" type="text" value="">
+            <input id="passward" class="item" type="text" value="">
         </span>
     </span>
     <br>
     <span>
         <span>
             <span class="item">패스워드 확인: </span>
-            <input id="naver-search" class="item" type="text" value="">
+            <input id="passward-check" class="item" type="text" value="">
         </span>
     </span>
     <br>
-    <button>확인</button>
+    <button onclick="login()">확인</button>
 
     <div>
-        불일치!
+        <div id="success" style="display: none;">
+            <span style="color: blue;">
+                일치!
+            </span>
+            <img src="resources/check.png" alt="일치" width="50px">
+        </div>
+        <div id="fail" style="display: none;">
+            <span style="color: red;">
+                불일치!
+            </span>
+            <img src="resources/forbidden.png" alt="불일치" width="50px">
+        </div>
     </div>
+
+    <script>
+        function login() {
+            if (!isIDLengthWithinFive()) {
+                alert("5미만입니다. 다시 입력해주세요.");
+                return;
+            }
+
+            let fail = document.getElementById('fail');
+            let success = document.getElementById('success');
+
+            if (isWrongPassword()) {
+                console.log("불일치");
+                success.style.display = 'none';
+                fail.style.display = 'block';
+                return;
+            }
+            fail.style.display = 'none';
+            success.style.display = 'block';
+        }
+
+        function isIDLengthWithinFive() {
+            let id = document.getElementById('member-id').value;
+            if (id.length < 5) {
+                return false;
+            }
+            return true;
+        }
+
+        function isWrongPassword() {
+            let password = document.getElementById('passward').value;
+            let passwordCheck = document.getElementById('passward-check').value;
+
+            if (password == passwordCheck) {
+                return false;
+            }
+            return true;
+        }
+    </script>
 
 </body>
 
