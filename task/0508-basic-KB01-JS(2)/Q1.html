@@ -59,29 +59,33 @@
         <span>
             <span>
                 <span class="item">보고싶은 웹툰 입력</span>
-                <input class="item" type="text" value="">
+                <form action="">
+                    <input id="naver-webtoon-search" class="item" type="text" value="">
+                </form>
             </span>
         </span>
         <span>
-            <button class="submit-button" onclick="">웹툰 검색</button>
+            <button class="submit-button" onclick="searchNaverWebtoon()">웹툰 검색</button>
         </span>
     </span>
     <hr><br>
 
     <script>
         function checkID() {
-            console.log("버튼 클릭");
             let btnID = document.getElementById('success');
-            console.log(btnID);
-            
             btnID.style.visibility = 'visible';
         }
 
         function searchNaver() {
-            console.log(document.getElementById('naver-search').value);
             let keyword = document.getElementById('naver-search').value;
             let URL = "https://kin.naver.com/search/list.naver?query=" + keyword;
             window.open(URL, '네이버지식인'); 
+        }
+
+        function searchNaverWebtoon() {
+            let keyword = document.getElementById('naver-webtoon-search').value;
+            let URL = "https://comic.naver.com/search?keyword=" + keyword;
+            window.open(URL, '네이버웹툰'); 
         }
     </script>
 </body>
