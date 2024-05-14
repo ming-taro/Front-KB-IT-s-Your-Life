@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            width: 500px;
+            align-items: center;
+        }
+        #jeju {
+            background-color: greenyellow;
+            text-align: center;
+        }
+        #japan {
+            background-color: orange;
+            text-align: center;
+        }
+        #hawaii {
+            background-color: purple;
+            text-align: center;
+        }
+        .text {
+            border-top: 1px solid red;
+            border-bottom: 1px solid red;
+            padding: 20px 0px;
+            font-weight: bold;
+            font-size: 15pt;
+            margin: 10px 0px;
+        }
+        #image {
+            width: 500px;
+            display: none;
+        }
+    </style>
+
+    <div class="container">
+        <div id="jeju" onclick="changeImage(this.id)">제주도로</div>
+        <div id="japan" onclick="changeImage(this.id)">일본으로</div>
+        <div id="hawaii" onclick="changeImage(this.id)">하와이로</div>
+        <div class="text">
+            힘들다!! 우리도 떠나자!!
+        </div>
+        <img id="image" src="resources/hawaii.jpg" alt="">
+    </div>
+
+    <script>
+        function changeImage(clicked_id) {
+            let image = document.getElementById('image');
+
+            image.style.display = 'block';
+
+            switch (clicked_id) {
+                case "jeju":
+                    image.src = "resources/jeju.jpg";
+                    break;
+                case "japan":
+                    image.src = "resources/japan.jpg";
+                    break;
+                default:
+                    image.src = "resources/hawaii.jpg";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
