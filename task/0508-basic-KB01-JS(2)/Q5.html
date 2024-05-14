@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5. 함수</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-weight: bold;
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 15pt;
+            text-align: center;
+            padding: 20px 0px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        button {
+            color: white;
+            background-color: blue;
+        }
+
+        #comment-container {
+            width: 100%;
+        }
+    </style>
+
+    <div>
+        <div class="title">그림을 본 느낌은?</div>
+        <img src="resources/baby.jpg" alt="">
+
+        <div>
+            <span>
+                <input id="comment" type="text">
+                <button>댓글 달기</button>
+            </span>
+        </div>
+        <hr>
+        <div id="comment-container"></div>
+    </div>
+
+    <script>
+        function addComment() {
+            let commentContainer = document.getElementById('comment-container');
+            commentContainer.innerHTML += `<div></div>`
+        }
+
+    </script>
+</body>
+
+</html>
