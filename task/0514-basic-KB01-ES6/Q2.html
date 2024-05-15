@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q2. 구조 분할 할당</title>
+  </head>
+  <body>
+    <script>
+      function addContact(name, phone, email, age) {
+        document.write(`name>>&nbsp&nbsp&nbsp${addWhiteSpace(name)}<br>`);
+        document.write(`phone>>&nbsp&nbsp&nbsp${phone}<br>`);
+        document.write(
+          `email>>&nbsp&nbsp&nbsp${email || addWhiteSpace('이메일없음')}<br>`
+        );
+        document.write(`next_age>>&nbsp&nbsp&nbsp${age + 1 || 1}<br>`);
+      }
+
+      function addContact3(name, phone, email, age) {
+        return {
+          name2: name,
+          tel: `SKT ${phone}`,
+          contact_email: `${email}@email.com` || addWhiteSpace('이메일없음'),
+          next_age: age + 1 || 1,
+        };
+      }
+
+      function addWhiteSpace(item) {
+        return item.split('').join(' ');
+      }
+
+      let { name2, tel, contact_email, next_age } = addContact3(
+        '지수',
+        '010-222-3333',
+        'hera',
+        100
+      );
+
+      addContact('지수', '010-222-3333', 'hera', 100);
+      document.write('-------------<br>');
+      document.write(`name2>>&nbsp&nbsp&nbsp${addWhiteSpace(name2)}<br>`);
+      document.write(`tel>>&nbsp&nbsp&nbsp${tel}<br>`);
+      document.write(`contact_email>>&nbsp&nbsp&nbsp${contact_email}<br>`);
+      document.write(`next_age>>&nbsp&nbsp&nbsp${next_age}<br>`);
+    </script>
+  </body>
+</html>
