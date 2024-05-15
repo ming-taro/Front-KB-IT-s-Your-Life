@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q3. 화살표 함수</title>
+  </head>
+  <body>
+    <script>
+      const test1 = (a, b) => {
+        return a + b;
+      };
+      const test2 = (params) => {
+        console.log(params + '님 환영합니다.!');
+        return params + '님 환영합니다.!';
+      };
+      const test3 = () => {
+        return 'ok';
+      };
+
+      console.log(test1(100, 200));
+
+      document.write(test1(100, 200) + '<br>');
+      document.write(test2('hong') + '<br>');
+      document.write(test3() + '<br>');
+
+      console.log(test3());
+    </script>
+  </body>
+</html>
