@@ -1,64 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Q5. 함수</title>
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
+  <body>
     <style>
-        body {
-            font-weight: bold;
-            width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-            align-items: center;
-        }
+      body {
+        font-weight: bold;
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        align-items: center;
+      }
 
-        .title {
-            font-size: 15pt;
-            text-align: center;
-            padding: 20px 0px;
-        }
+      .title {
+        font-size: 15pt;
+        text-align: center;
+        padding: 20px 0px;
+      }
 
-        img {
-            width: 100%;
-        }
+      img {
+        width: 100%;
+      }
 
-        button {
-            color: white;
-            background-color: blue;
-        }
+      button {
+        color: white;
+        background-color: blue;
+      }
 
-        #comment-container {
-            width: 100%;
-        }
+      #comment-container {
+        width: 100%;
+      }
+
+      #comment {
+        width: 100%;
+        padding: 20px 0px;
+        border-bottom: 1px solid orangered;
+      }
     </style>
 
     <div>
-        <div class="title">그림을 본 느낌은?</div>
-        <img src="resources/baby.jpg" alt="">
+      <div class="title">그림을 본 느낌은?</div>
+      <img src="resources/baby.jpg" alt="" />
 
-        <div>
-            <span>
-                <input id="comment" type="text">
-                <button>댓글 달기</button>
-            </span>
+      <div>
+        <div class="input-group mt-3 mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="comment-input"
+            aria-label="comment"
+            aria-describedby="comment"
+          />
+          <button
+            class="btn btn-primary"
+            type="button"
+            id="button-addon2"
+            onclick="addComment()"
+          >
+            댓글 달기
+          </button>
         </div>
-        <hr>
-        <div id="comment-container"></div>
+      </div>
+      <hr />
+      <div id="comment-container"></div>
     </div>
 
     <script>
-        function addComment() {
-            let commentContainer = document.getElementById('comment-container');
-            commentContainer.innerHTML += `<div></div>`
-        }
-
+      function addComment() {
+        let commentContainer = document.getElementById('comment-container');
+        let humanIcon = `
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-person-circle"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+            <path
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+            />
+          </svg>
+        `;
+        let comment = document.getElementById('comment-input');
+        commentContainer.innerHTML += `<div id="comment">${humanIcon}${comment.value}</div>`;
+        comment.value = '';
+      }
     </script>
-</body>
-
+  </body>
 </html>
