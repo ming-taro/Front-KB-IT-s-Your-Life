@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q6. 함수</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <style>
+      body {
+        font-weight: bold;
+        width: 400px;
+        margin: 20px;
+      }
+
+      #user-id-check {
+        color: red;
+      }
+
+      button {
+        margin: 10px 0px;
+      }
+    </style>
+    <!-- ID 중복 체크 -->
+    <label for="user-id" class="form-label">ID 입력:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="user-id"
+      aria-describedby="user-id"
+    />
+    <button
+      class="btn btn-warning"
+      type="button"
+      id="id-check-button"
+      onclick="checkDuplicatedId()"
+    >
+      회원가입시 ID 중복 체크
+    </button>
+    <div id="user-id-check"></div>
+
+    <!-- 전화번호 입력 -->
+    <label for="user-phone-number" class="form-label">전화번호 입력:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="user-phone-number"
+      aria-describedby="user-phone-number"
+    />
+    <button
+      class="btn btn-primary"
+      type="button"
+      id="certification-number-button"
+      onclick="askCertificationNumber()"
+    >
+      인증번호 받기
+    </button>
+    <div id="certification-number"></div>
+
+    <script>
+      function checkDuplicatedId() {
+        let userID = document.getElementById('user-id').value;
+        let userIdCheck = document.getElementById('user-id-check');
+        let text = '사용 가능한 ID입니다.';
+
+        if (userID == 'root' || userID == 'admin' || userID == 'apple') {
+          text = '이미 사용중인 ID입니다. 다른 ID를 선택해주세요.';
+        }
+
+        userIdCheck.innerHTML = `<div id="user-id-check">${text}</div>`;
+      }
+
+      function askCertificationNumber() {
+        let userPhoneNumber =
+          document.getElementById('user-phone-number').value;
+        let certificationNumber = document.getElementById(
+          'certification-number'
+        );
+
+        certificationNumber.innerHTML = `<div>인증번호: ${createRandomNumberOfTree(
+          userPhoneNumber
+        )}</div>`;
+      }
+
+      function createRandomNumberOfTree(phoneNumber) {
+        let front = phoneNumber.substring(0, 3);
+        let back =
+          '' +
+          createRandomNumberOfOne(1, 9) +
+          createRandomNumberOfOne(0, 9) +
+          createRandomNumberOfOne(0, 9);
+        let randomNumber = '';
+
+        switch (front) {
+          case '010':
+            randomNumber += '01';
+            break;
+          case '011':
+            randomNumber += '02';
+            break;
+          default:
+            randomNumber += '03';
+        }
+        return randomNumber + back;
+      }
+
+      function createRandomNumberOfOne(minNumber, maxNumber) {
+        return Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
+      }
+    </script>
+  </body>
+</html>
