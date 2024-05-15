@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q1. 가변 파라메터</title>
+  </head>
+  <body>
+    <script>
+      function addContact(
+        name,
+        phone,
+        home,
+        address,
+        email,
+        ...favoritesFoods
+      ) {
+        document.write('name >> ' + addWhiteSpace(name || '없음') + '<br>');
+        document.write('home >> ' + (home || addWhiteSpace('없음')) + '<br>');
+        document.write(
+          'address >> ' + addWhiteSpace(address || '없음') + '<br>'
+        );
+        document.write('email >> ' + (email || addWhiteSpace('없음')) + '<br>');
+        document.write(
+          'favoritesFoods >> ' +
+            (favoritesFoods.map((food) => addWhiteSpace(food)) || '')
+        );
+        document.write('<br>');
+      }
+
+      function addWhiteSpace(item) {
+        return item.split('').join(' ');
+      }
+
+      addContact('홍길동', '010-222-3331');
+      document.write('----------<br>');
+      addContact('이몽룡', '010-222-3331', '02-342-9900', '서울시');
+      document.write('----------<br>');
+      addContact(
+        '이몽룡',
+        '010-222-3331',
+        '02-342-9900',
+        '서울시',
+        'hero@email.com',
+        '감자',
+        '고구마'
+      );
+    </script>
+  </body>
+</html>
