@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q5. 객체 리터럴</title>
+  </head>
+  <body>
+    <script>
+      let delivery = {
+        name: function (name) {
+          document.write(`name>>&nbsp&nbsp&nbsp${name}<br>`);
+        },
+        totalPrice: function (totalPrice) {
+          document.write(`total_price>>&nbsp&nbsp&nbsp${totalPrice}<br>`);
+        },
+        discountPrice: function (discountPrice) {
+          document.write(`discount_price>>&nbsp&nbsp&nbsp${discountPrice}<br>`);
+        },
+        onePrice: function (onePrice) {
+          document.write(`one_price>>&nbsp&nbsp&nbsp${onePrice}<br>`);
+        },
+        arriveDate: function (arriveDate) {
+          document.write(`arrive_date>>&nbsp&nbsp&nbsp${arriveDate}<br>`);
+        },
+        rate: function (rate) {
+          document.write(`rate>>&nbsp&nbsp&nbsp${rate}<br>`);
+        },
+        stackMoney: function (stackMoney) {
+          document.write(`stack_money>>&nbsp&nbsp&nbsp${stackMoney}<br>`);
+        },
+      };
+
+      document.write('할 인 을&nbsp&nbsp하 는&nbsp&nbsp중 입 니 다 .<br>');
+      delivery.name('에 너 자 이 자');
+      delivery.totalPrice(5000);
+      delivery.discountPrice(4700);
+      delivery.onePrice(2350);
+      delivery.arriveDate('내 일(수 )도 착  보장');
+      delivery.rate(50);
+      delivery.stackMoney(188);
+    </script>
+  </body>
+</html>
