@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1. Promise</title>
+</head>
+
+<body>
+    <script>
+        const promise = new Promise((resolve, reject) => {
+            resolve('Promise를 시작합니다.<br>');
+        });
+
+        let count = 0;
+
+        promise.then((msg) => {
+            document.write(msg); // resolve 메세지
+            count++;
+        }).then((msg) => {
+            document.write(`${count} ==> 너의 이름은?<br>`);
+            count++;
+            return '홍길동';
+        }).then((msg) => {
+            document.write(`${count} ==> ${msg}<br>`);
+            document.write('네가 가고 싶은 곳은?<br>');
+            count++;
+            return `${msg}은 일본`;
+        }).then((msg) => {
+            document.write(`${count} ==> ${msg}<br>`);
+            document.write(`${msg}을 가기를 희망한다.`);
+        }).catch((error) => {
+            alert('error : ' + error);
+        })
+    </script>
+</body>
+
+</html>
