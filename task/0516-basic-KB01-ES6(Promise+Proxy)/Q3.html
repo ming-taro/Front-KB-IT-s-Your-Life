@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3. 전개 연산자</title>
+</head>
+
+<body>
+    <script>
+        let obj1 = { name: '박문수', age: 29 };
+        let obj2 = { ...obj1, email: 'winner@email.com' };
+
+        printObj(obj1, obj2);
+        console.log('---------------');
+        document.write('---------------<br>');
+
+        obj2['age'] = 100;
+
+        printObj(obj1, obj2);
+        console.log(obj1 === obj2);
+        document.write(obj1 === obj2);
+
+        function printObj(obj1, obj2) {
+            console.log('obj1>>    ');
+            console.log(obj1);
+            console.log('obj2>>    ');
+            console.log(obj2);
+            printInfo('obj1', obj1);
+            printInfo('obj2', obj2);
+        }
+
+        function printInfo(name, obj) {
+            let info = [];
+
+            Object.keys(obj).forEach(function (key) {
+                info.push(`${key}: ${obj[key]}`);
+            })
+
+            document.write(`${name}>>&nbsp&nbsp{ ${info.join(', ')} }<br>`);
+        }
+    </script>
+</body>
+
+</html>
