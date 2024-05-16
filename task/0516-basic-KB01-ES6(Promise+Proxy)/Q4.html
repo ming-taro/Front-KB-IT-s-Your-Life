@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4. 토익문제</title>
+</head>
+
+<body>
+    <script>
+        let answerSheet = createToeicSheet(1000);
+        let mySheet = createToeicSheet(1000);
+
+        printSheet(answerSheet, mySheet);
+
+        function printSheet(answerSheet, mySheet) {
+            let totalScore = 0;
+
+            for (let i = 0; i < answerSheet.length; i++) {
+                let result = answerSheet[i] == mySheet[i] ? '정답' : '오답';
+                totalScore += answerSheet[i] == mySheet[i] ? 1 : 0;
+                document.write(`${i}>> ${answerSheet[i]} ${mySheet[i]} --> ${result}<br>`);
+            }
+
+            document.write(`TOEIC 점수: ${totalScore}점`);
+        }
+
+        function createToeicSheet(number) {
+            let sheet = [];
+            for (let i = 0; i < number; i++) {
+                sheet.push(creatRandomNumber(1, 5));
+            }
+            return sheet;
+        }
+
+        function creatRandomNumber(minNumber, maxNumber) {
+            return Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
+        }
+    </script>
+</body>
+
+</html>
