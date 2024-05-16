@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+
+      for (let i = 0; i < 6; i++) {
+        while (true) {
+          let number = creatRandomNumber(1, 46);
+          if (numbers.includes(number)) {
+            continue;
+          }
+
+          numbers.push(number);
+          break;
+        }
+      }
+
+      document.write(`복권번호: [ ${numbers.join(', ')} ]`);
+
+      function creatRandomNumber(minNumber, maxNumber) {
+        return Number(
+          Math.floor(Math.random() * (maxNumber - minNumber) + minNumber)
+        );
+      }
+    </script>
+  </body>
+</html>
