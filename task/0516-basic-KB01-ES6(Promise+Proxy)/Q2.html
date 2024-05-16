@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2. Promise</title>
+</head>
+<body>
+    <script>
+        // document.write(Math.random());
+        const promise = new Promise((resolve, reject) => {
+            resolve('Promise를 시작합니다.<br>');
+        });
+
+        let count = 0;
+
+        promise.then((msg) => {
+            document.write(msg); // resolve 메세지
+            count++;
+        }).then((msg) => {
+            document.write(`${count} ==> 두 수를 랜덤하게 생성하여 더한 후 리턴?<br>`);
+            count++;
+            return [creatRandomNumber(1, 10) + creatRandomNumber(1, 10)];
+        }).then((msg) => {
+            document.write(`${count} ==> ${msg[0]}<br>`);
+            document.write('두 수를 랜덤하게 생성하여 곱한 값을 리턴<br>');
+            count++;
+            msg.push(creatRandomNumber(1, 10) * creatRandomNumber(1, 10));
+            return msg;
+        }).then((msg) => {
+            document.write(`${count} ==> ${msg[1]}<br>`);
+            document.write(`두 수의 합은 ${msg[0]}<br>`);
+            document.write(`두 수의 곱은 ${msg[1]}<br>`);
+        })
+
+        function creatRandomNumber(minNumber, maxNumber) {
+            return Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
+        }
+    </script>
+</body>
+</html>
