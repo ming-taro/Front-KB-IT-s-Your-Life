@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        .container {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+        }
+
+        table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0px;
+        }
+
+        .lock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 20pt;
+        }
+
+        .navbar-menu>li:not(:last-child)::after {
+            content: "|";
+            margin: 0px 20px;
+            color: blue;
+            font-size: 20pt;
+        }
+
+        .title {
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: aquamarine;
+            width: 250px;
+            text-align: center;
+            margin: 20px 0px;
+        }
+
+        a {
+            color: blue;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a[href=login] {
+            background-color: yellow;
+        }
+
+        img {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="navbar-menu">
+            <li><a href="home">홈으로</a></li>
+            <li><a href="login">로그인</a></li>
+            <li><a href="company-info">회사정보</a></li>
+            <li><a href="company-location">회사위치</a></li>
+        </ul>
+
+        <table>
+            <tr>
+                <td>
+                    아이디
+                </td>
+                <td>
+                    <input type="text" name="userID" id="userID">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    패스워드
+                </td>
+                <td>
+                    <input type="password" name="userPW" id="userPW">
+                </td>
+            </tr>
+        </table>
+
+        <div class="lock">
+            <img src="https://cdn-icons-png.flaticon.com/512/483/483408.png" alt="">
+            <img src="https://cdn-icons-png.flaticon.com/512/158/158709.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

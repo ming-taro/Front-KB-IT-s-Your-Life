@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>company info</title>
+
+    <style>
+        .container {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 20pt;
+        }
+
+        .navbar-menu>li:not(:last-child)::after {
+            content: "|";
+            margin: 0px 20px;
+            font-size: 20pt;
+            color: blue;
+        }
+
+        a {
+            color: blue;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a[href=company-location] {
+            background-color: yellow;
+        }
+
+        img {
+            height: 200px;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        table {
+            margin: 20px;
+            background-color: rgb(255, 232, 169);
+            border-collapse: collapse;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid;
+        }
+
+        td {
+            padding: 10px 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="navbar-menu">
+            <li><a href="home">홈으로</a></li>
+            <li><a href="login">로그인</a></li>
+            <li><a href="company-info">회사정보</a></li>
+            <li><a href="company-location">회사위치</a></li>
+        </ul>
+
+        <div class="content-container">
+            <img class="content"
+                src="https://lh3.googleusercontent.com/proxy/n8AetMT6dfKoapJOKSyUjH9kKPw1BpEi7WBnGeDb-0OZO5-x5WR5DJC4eK6NbvQiNm3yKjHXfIRt6zGbc-Uc5CdCCpNZWeNzcAXvflBYcF1UvgNixZ1lg2CU"
+                alt="">
+            <div class="content">
+                <table>
+                    <tr>
+                        <td>대표번호</td>
+                        <td>02-144</td>
+                    </tr>
+
+                    <tr>
+                        <td>제품문의</td>
+                        <td>02-155</td>
+                    </tr>
+
+                    <tr>
+                        <td>위치안내</td>
+                        <td> 02-166</td>
+                    </tr>
+
+                    <tr>
+                        <td>야간안내</td>
+                        <td>02-177</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
