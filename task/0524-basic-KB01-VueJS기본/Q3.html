@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3. 디렉티브/인스턴스</title>
+
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        잔고 : <input type="number" v-model="balance"><br>
+        회원님의 등급 : <b>{{ findGrade() }}</b>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            name: 'App',
+            data() {
+                return {
+                    balance: ''
+                };
+            },
+            methods: {
+                findGrade () {
+                    if (this.balance >= 1000000) {
+                        return 'Gold';
+                    } else if (this.balance >= 500000) {
+                        return 'Silver';
+                    } else if (this.balance >= 200000) {
+                        return 'Bronze';
+                    } else {
+                        return 'Basic';
+                    }
+                }
+            },
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
