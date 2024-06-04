@@ -1,24 +1,14 @@
-<script setup>
-import axios from 'axios';
-
-const requesrAPI = () => {
-  // const url = "http://localhost:8000/todolist/gdhong"; <- CORS 문제 발생
-  // vite.config.js에서 프록시를 설정해주면 요청URL을 우회하여 데이터를 받을 수 있다
-  const url = "/api/todolist/gdhong";
-
-  axios.get(url).then((response) => {
-    console.log('# 응답객체 : ', response);
-  }).catch((error) => {
-    console.log('error');
-    console.log(error);
-  })
-}
-
-requesrAPI();
-</script>
-
 <template>
-  <div>
-    <h2>콘솔을 확인합니다.</h2>
+  <div class="container">
+    <Header />
+    <router-view></router-view> <!-- index.js가 그려지는 영역 -->
   </div>
 </template>
+
+<script setup>
+import Header from '@/components/Header.vue'
+</script>
+
+<style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+</style>
