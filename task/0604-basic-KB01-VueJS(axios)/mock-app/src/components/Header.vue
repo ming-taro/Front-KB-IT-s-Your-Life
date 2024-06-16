@@ -11,6 +11,16 @@
             AxiosBox
           </router-link>
         </li>
+        <li>
+          <router-link class="nav-link" to="/async-box">
+            AsyncBox
+          </router-link>
+        </li>
+        <li>
+          <router-link class="nav-link" to="/post-box">
+            PostBox
+          </router-link>
+        </li>
         <!-- <li class="nav-item">
             <router-link class="nav-link" to="/about">
                 About
